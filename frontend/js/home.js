@@ -1,17 +1,7 @@
-const API_URL = "http://127.0.0.1:8000";
-
 const slideElements = Array.from(document.querySelectorAll(".slide"));
 const dotsContainer = document.getElementById("sliderDots");
 const prevButton = document.getElementById("prevSlide");
 const nextButton = document.getElementById("nextSlide");
-
-const chatLauncher = document.getElementById("chatLauncher");
-const chatWidget = document.getElementById("chatWidget");
-const chatClose = document.getElementById("chatClose");
-const chatMessages = document.getElementById("chatMessages");
-const chatForm = document.getElementById("chatForm");
-const chatInput = document.getElementById("chatInput");
-const chatSend = document.getElementById("chatSend");
 
 let currentSlide = 0;
 let autoplayTimer = null;
@@ -77,81 +67,6 @@ function restartAutoplay() {
   startAutoplay();
 }
 
-function toggleChatWidget(open) {
-  if (!chatWidget || !chatLauncher) {
-    return;
-  }
-
-  chatWidget.classList.toggle("open", open);
-  chatWidget.setAttribute("aria-hidden", String(!open));
-  chatLauncher.setAttribute("aria-expanded", String(open));
-  chatLauncher.setAttribute("aria-label", open ? "Close chat" : "Open chat");
-
-  if (open && chatInput) {
-    chatInput.focus();
-  }
-}
-
-function addChatBubble(text, type) {
-  if (!chatMessages) {
-    return;
-  }
-
-  const bubble = document.createElement("div");
-  bubble.className = `chat-bubble ${type}`;
-  bubble.textContent = text;
-  chatMessages.appendChild(bubble);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-async function sendChatMessage(message) {
-  const response = await fetch(`${API_URL}/chat`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ message })
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-  }
-
-  return response.json();
-}
-
-function bindChat() {
-  if (!chatForm || !chatInput || !chatSend) {
-    return;
-  }
-
-  addChatBubble("Hi! I am your WildTrack assistant. Ask me about animals, routes, safety, or park facilities.", "bot");
-
-  chatForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const message = chatInput.value.trim();
-    if (!message) {
-      return;
-    }
-
-    addChatBubble(message, "user");
-    chatInput.value = "";
-    chatSend.disabled = true;
-
-    try {
-      const data = await sendChatMessage(message);
-      addChatBubble(data.reply || "I could not find an answer right now.", "bot");
-    } catch (error) {
-      addChatBubble("Assistant is temporarily unavailable. Please try again.", "bot");
-      console.error("Chat error:", error);
-    } finally {
-      chatSend.disabled = false;
-      chatInput.focus();
-    }
-  });
-}
-
 function init() {
   if (slideElements.length > 0) {
     renderDots();
@@ -185,18 +100,6 @@ function init() {
     });
   }
 
-  if (chatLauncher) {
-    chatLauncher.addEventListener("click", () => {
-      const isOpen = chatWidget?.classList.contains("open");
-      toggleChatWidget(!isOpen);
-    });
-  }
-
-  if (chatClose) {
-    chatClose.addEventListener("click", () => toggleChatWidget(false));
-  }
-
-  bindChat();
 }
 
 init();

@@ -16,7 +16,7 @@
 			<a href="index.html">Home</a>
 			<a href="animals.html">Animals</a>
 			<a href="map.html">Map</a>
-			<a href="chatbot.html">Assistant</a>
+			<a href="#" class="open-chat-trigger">Assistant</a>
 		</nav>
 	</header>
 
@@ -72,5 +72,37 @@
 			</article>
 		</section>
 	</main>
+
+	<button id="chatLauncher" class="chat-launcher" aria-label="Open chat" aria-expanded="false">
+		<span class="chat-launcher-pulse" aria-hidden="true"></span>
+		<span class="chat-launcher-icon" aria-hidden="true">
+			<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+				<path d="M12 2a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v6a4 4 0 0 1-4 4h-1v1.5a.5.5 0 0 1-.8.4L11 18H8a4 4 0 0 1-4-4V7a2 2 0 0 1 2-2h3V4a2 2 0 0 1 2-2Zm0 2a.5.5 0 0 0-.5.5V5h1v-.5A.5.5 0 0 0 12 4ZM6 7v7a2 2 0 0 0 2 2h3.3a.5.5 0 0 1 .3.1l1.4 1.05V16.5a.5.5 0 0 1 .5-.5H15a2 2 0 0 0 2-2V7H6Zm3.5 2.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm5 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"></path>
+			</svg>
+		</span>
+		<span class="chat-launcher-icon close" aria-hidden="true">x</span>
+		<span class="chat-launcher-label">Chat with us</span>
+	</button>
+
+	<section id="chatWidget" class="chat-widget" aria-hidden="true">
+		<div class="chat-header">
+			<div>
+				<p class="chat-title">WildTrack Assistant</p>
+				<p class="chat-subtitle">Online now</p>
+			</div>
+			<button id="chatClose" class="chat-close" type="button" aria-label="Close chat">x</button>
+		</div>
+
+		<div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+		<form id="chatForm" class="chat-form">
+			<input id="chatInput" class="chat-input" type="text" placeholder="Ask about animals, map, safety, or facilities..." autocomplete="off">
+			<button id="chatSend" class="chat-send" type="submit">Send</button>
+		</form>
+
+		<div class="chat-footer-note">Powered by WildTrack AI support</div>
+	</section>
+
+	<script src="js/chat-widget.js"></script>
 </body>
 </html>
