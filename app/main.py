@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from app.services.vision import detect_animals
 from app.services.webhook import send_to_webhook
@@ -7,6 +10,9 @@ from app.services.chatbot import ask_question
 from app.utils.parser import parse_predictions
 
 app = FastAPI()
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+FRONTEND_DIR = BASE_DIR / "frontend"
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,8 +32,8 @@ class ChatRequest(BaseModel):
     message: str
 
 # Health check
-@app.get("/")
-def home():
+@app.get("/api/health")
+def health():
     return {"message": "WildTrack API running"}
 
 # 🐘 Animal detection endpoint
@@ -91,3 +97,8 @@ async def chat(payload: ChatRequest):
         return {"reply": answer}
     except Exception:
         raise HTTPException(status_code=500, detail="Chat service is unavailable")
+
+
+# Mount frontend last so API routes above take precedence.
+if FRONTEND_DIR.exists():
+    app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
