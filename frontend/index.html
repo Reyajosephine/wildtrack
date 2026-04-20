@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildTrack Wildlife Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">WildTrack Wildlife Park</div>
+    <nav class="site-nav">
+      <a href="#experiences">Home</a>
+      <a href="animals.html">Animals</a>
+      <a href="map.html">Map</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-slider" aria-label="WildTrack Wildlife Park featured wildlife slider">
+        <div id="slideTrack" class="slide-track">
+          <article class="slide slide-elephant active" aria-hidden="false">
+            <span class="sr-only">Elephant habitat view</span>
+          </article>
+          <article class="slide slide-rhino" aria-hidden="true">
+            <span class="sr-only">Rhino conservation plains</span>
+          </article>
+          <article class="slide slide-savannah" aria-hidden="true">
+            <span class="sr-only">Savannah wildlife landscape</span>
+          </article>
+          <article class="slide slide-lion" aria-hidden="true">
+            <span class="sr-only">Lion pride in the wild</span>
+          </article>
+          <article class="slide slide-tiger" aria-hidden="true">
+            <span class="sr-only">Tiger moving through forest habitat</span>
+          </article>
+          <article class="slide slide-giraffe" aria-hidden="true">
+            <span class="sr-only">Giraffe in grassland landscape</span>
+          </article>
+          <article class="slide slide-zebra" aria-hidden="true">
+            <span class="sr-only">Zebra herd on open plains</span>
+          </article>
+          <article class="slide slide-leopard" aria-hidden="true">
+            <span class="sr-only">Leopard resting in tree habitat</span>
+          </article>
+        </div>
+
+        <div class="hero-content">
+          <p class="hero-kicker">WildTrack Wildlife Park</p>
+          <h1>Protect Wildlife. Explore Responsibly.</h1>
+          <p class="hero-subtitle">
+            Discover elephants, rhinos, and rare habitats through immersive routes powered by smart conservation technology.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#zones" class="btn btn-primary">Discover</a>
+            <a href="animals.html" class="btn btn-secondary">Upcoming Sightings</a>
+          </div>
+        </div>
+
+        <div class="slider-controls" aria-label="Slider navigation">
+          <button id="prevSlide" class="slider-btn" type="button" aria-label="Previous slide">&#10094;</button>
+          <div id="sliderDots" class="slider-dots" aria-label="Slide indicators"></div>
+          <button id="nextSlide" class="slider-btn" type="button" aria-label="Next slide">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiences" class="section-grid">
+      <article>
+        <h3>Guided Night Safaris</h3>
+        <p>Twilight trails with trained rangers and controlled viewing corridors.</p>
+      </article>
+      <article>
+        <h3>AI Ranger Intelligence</h3>
+        <p>Camera intelligence supports route planning and real-time ranger response coordination.</p>
+      </article>
+      <article>
+        <h3>Wildlife Learning Hub</h3>
+        <p>Discover behavior facts, feeding schedules, and habitat protection insights.</p>
+      </article>
+    </section>
+
+    <section id="zones" class="banner">
+      <h2>Dark-mode command center for wildlife adventure</h2>
+      <p>WildTrack unifies explorer routes, ranger support, and intelligent monitoring into one immersive experience.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Need route help right now?</h2>
+      <p>Use the in-page assistant for instant navigation, facilities, and wildlife safety guidance.</p>
+    </section>
+  </main>
+
+  <button id="chatLauncher" class="chat-launcher" aria-label="Open chat" aria-expanded="false">
+    <span class="chat-launcher-pulse" aria-hidden="true"></span>
+    <span class="chat-launcher-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+        <path d="M4 5.75A2.75 2.75 0 0 1 6.75 3h10.5A2.75 2.75 0 0 1 20 5.75v7.5A2.75 2.75 0 0 1 17.25 16H12.1l-2.52 2.52a.75.75 0 0 1-1.28-.53V16H6.75A2.75 2.75 0 0 1 4 13.25v-7.5Zm2.75-1.25c-.69 0-1.25.56-1.25 1.25v7.5c0 .69.56 1.25 1.25 1.25h2.3c.41 0 .75.34.75.75v.94l1.46-1.47c.14-.14.33-.22.53-.22h5.46c.69 0 1.25-.56 1.25-1.25v-7.5c0-.69-.56-1.25-1.25-1.25H6.75Zm2.5 4.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm2.75 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm2.75 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"></path>
+      </svg>
+    </span>
+    <span class="chat-launcher-icon close" aria-hidden="true">x</span>
+    <span class="chat-launcher-label">Chat with us</span>
+  </button>
+
+  <section id="chatWidget" class="chat-widget" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <p class="chat-title">WildTrack Assistant</p>
+        <p class="chat-subtitle">Online now</p>
+      </div>
+      <button id="chatClose" class="chat-close" type="button" aria-label="Close chat">x</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+    <form id="chatForm" class="chat-form">
+      <input id="chatInput" class="chat-input" type="text" placeholder="Ask about animals, map, safety, or facilities..." autocomplete="off">
+      <button id="chatSend" class="chat-send" type="submit">Send</button>
+    </form>
+
+    <div class="chat-footer-note">Powered by WildTrack AI support</div>
+  </section>
+
+  <script src="js/home.js"></script>
+</body>
+</html>

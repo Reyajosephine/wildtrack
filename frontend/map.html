@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WildTrack Park Map</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="brand">WildTrack Wildlife Park</div>
+		<nav class="site-nav">
+			<a href="index.html">Home</a>
+			<a href="animals.html">Animals</a>
+			<a href="map.html">Map</a>
+			<a href="chatbot.html">Assistant</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="sub-hero sub-hero-map">
+			<div>
+				<p class="tag">Navigation and safety</p>
+				<h1>Park Map and Zone Planner</h1>
+				<p>Use this guide to reach enclosures, facilities, and ranger points with clear zone-by-zone directions.</p>
+			</div>
+			<div class="sub-hero-note">
+				<h2>Fast Tip</h2>
+				<p>Start from Zone B for canteen access, then move clockwise for the smoothest family route.</p>
+			</div>
+		</section>
+
+		<section class="map-layout">
+			<article class="map-frame-card">
+				<h3>Interactive Park View</h3>
+				<p>Zoom and pan to preview route options before entering high-activity wildlife areas.</p>
+				<iframe
+					class="map-frame"
+					title="WildTrack map"
+					loading="lazy"
+					src="https://www.openstreetmap.org/export/embed.html?bbox=31.0%2C-2.0%2C32.0%2C-1.0&amp;layer=mapnik">
+				</iframe>
+			</article>
+
+			<aside class="zone-list-card">
+				<h3>Zone Directory</h3>
+				<ul>
+					<li><strong>Zone A:</strong> Elephant Savannah + Ranger Point</li>
+					<li><strong>Zone B:</strong> Canteen, Zebra Plains, Giraffe Lookout</li>
+					<li><strong>Zone C:</strong> Lion Trail + Riverbank Crocodile Deck</li>
+					<li><strong>Zone D:</strong> Aviary Canopy + Quiet Family Rest Area</li>
+				</ul>
+				<p class="zone-note">Emergency help: Use nearest ranger post marker on map or call park desk immediately.</p>
+			</aside>
+		</section>
+
+		<section class="section-grid">
+			<article>
+				<h3>Restrooms</h3>
+				<p>Available in Zones A, C, and D with clear signposts from all major walkways.</p>
+			</article>
+			<article>
+				<h3>First Aid</h3>
+				<p>Main first-aid station is next to Ranger HQ, with support carts on safari trails.</p>
+			</article>
+			<article>
+				<h3>Shuttle Stops</h3>
+				<p>Electric carts run every 15 minutes between entry gate, Zone B, and Zone D.</p>
+			</article>
+		</section>
+	</main>
+</body>
+</html>

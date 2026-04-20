@@ -1,0 +1,13 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+PREDICTION_URL = os.getenv("PREDICTION_URL")
+PREDICTION_KEY = os.getenv("PREDICTION_KEY")
+MAKE_WEBHOOK_URL = os.getenv("MAKE_WEBHOOK_URL")
+
+AZURE_LANGUAGE_ENDPOINT = os.getenv("AZURE_LANGUAGE_ENDPOINT")
+AZURE_LANGUAGE_KEY = os.getenv("AZURE_LANGUAGE_KEY")
+PROJECT_NAME = os.getenv("PROJECT_NAME")
+DEPLOYMENT_NAME = os.getenv("DEPLOYMENT_NAME")

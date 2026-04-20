@@ -1,0 +1,18 @@
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+
+requests==2.31.0
+python-multipart==0.0.9
+python-dotenv==1.0.1
+
+opencv-python-headless==4.9.0.80
+
+# Azure SDKs (IMPORTANT for your project)
+azure-core==1.30.1
+azure-ai-vision-imageanalysis==1.0.0
+azure-cognitiveservices-vision-customvision==3.1.0
+
+# JSON / parsing safety
+pydantic==2.6.1
+azure-ai-language-questionanswering
+azure-core
